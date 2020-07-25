@@ -33,32 +33,74 @@ header {
     }
 }
 
-header #logo img {
+.left-side{
+    justify-content: center;
+    margin-left: 10%;
+}
+
+.left-side, .right-side {
+    display: flex;
+    align-items: center;
+}
+
+#logo img {
     display: inline-block;
     width: 115px;
     height: 33px;
 }
 
-header .left-side{
-    justify-content: center;
-    margin-left: 10%;
-}
-
-header, header .left-side, header .right-side {
-    display: flex;
-    align-items: center;
-}
-
-header #logo {
+#logo {
     cursor: pointer;
 }
 
-header .right-side {
+.right-side {
     justify-content: center;
     margin-right: 10%;
 }
 
-.avatar-container .avatar {
+.bell-wrapper {
+    position: relative;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.bell-wrapper span {
+    color: #cccaca;
+    cursor: pointer;
+}
+
+.bell-wrapper span:hover{
+    color: #adadad;
+}
+
+.profile-menu {
+    display: flex;
+    align-items: center;
+    color: #000;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.profile-menu input
+{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 17%;
+    right: 10.75%;
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    z-index: 5;
+}
+
+.avatar-container {
+    margin: 0 10px;
+}
+
+.avatar {
     width: 40px;
     height: 40px;
     background-color: #ff9a00;
@@ -78,109 +120,81 @@ header .right-side {
     border-radius: 50%;
 }
 
-.avatar-container .avatar span {
+input:hover ~ .avatar-container .avatar {
+    background-color: #e78b01;
+}
+
+.avatar p {
     margin-top: 3px;
     position: relative;
-    top: 25%
+    top: 18%;
+    font-size: 0;
 }
 
-.profile-menu .avatar-container {
-    margin: 0 10px;
+.avatar p::first-letter {
+    font-size: 1.25rem;
+    text-align: center;
 }
 
-.profile-menu input
-{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 17%;
-    right: 10.75%;
-    cursor: pointer;
-    display: block;
-    opacity: 0;
-    z-index: 5;
-}
-
-.header .right-side .profile-menu {
-    display: flex;
-    align-items: center;
-    color: #000;
-    width: 100%;
-    justify-content: flex-end;
-}
-
-.bell-wrapper {
-    position: relative;    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
-
-header .bell-wrapper span{
-    color: #cccaca;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px){
-    .profile-menu .mini-menu {
-        min-width: 0;
-        width: 175px;
-    }
-}
-
- .profile-menu .mini-menu {
+ .dropdown-menu {
     display: none;
     position: absolute;
     top: 62px;
     right: 10.75%;
     z-index: 131;
-    min-width: 175px;
+    min-width: 160px;
     height: auto;
     background: #fff;
     border-radius: 3px;
     box-shadow: -1px 5px 17px -7px rgba(0,0,0,.23);
-    font-family: "Avenir Next", "Avenir", sans-serif;
+    font-family: "Helvetica";
 }
 
-.mini-menu #menu {
+.menu-list {
     list-style-type: none;
     padding: 0 10px 10px 10px;
     margin: 0;
     color: #767676;
 }
 
-.mini-menu #menu a
+.menu-list a
 {
     text-decoration: none;
 }
 
-.mini-menu #menu li
+.menu-list li
 {
     padding: 5px;
-    font-size: 14px;
+    font-size: 15px;
     text-decoration: none;
-    color: #232323;
+    color: black;
     transition: color 0.3s ease;
 }
 
-.mini-menu #menu li:hover
+.menu-list li:hover
 {
     background-color: #f7f7f7;
 }
 
-.mini-menu h5 {
+.dropdown-menu h5 {
     color: #767676;
     margin: 5px 5px;
-    font-family: "Avenir Next", "Avenir", sans-serif;
     text-align: center;
+    font-family: "Helvetica";
 }
 
-.mini-menu hr {
+.dropdown-menu hr {
     color: #767676;
     width: 80%;
 }
 
-input:checked ~ .mini-menu {
+input:checked ~ .dropdown-menu {
     display: block;
+}
+
+@media screen and (max-width: 768px){
+    .dropdown-menu {
+        min-width: 0;
+        width: 175px;
+    }
 }
