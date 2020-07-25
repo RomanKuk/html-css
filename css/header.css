@@ -30,7 +30,6 @@ header {
 @media (max-width: 1024px) {
     header  {
         align-items: initial;
-        overflow-y: scroll;
     }
 }
 
@@ -81,19 +80,21 @@ header .right-side {
 
 .avatar-container .avatar span {
     margin-top: 3px;
+    position: relative;
+    top: 25%
 }
 
 .profile-menu .avatar-container {
     margin: 0 10px;
 }
 
-.avatar input
+.profile-menu input
 {
-    width: 100%;
-    height: 100%;
-    top: -3px;
-    left: -4px;
+    width: 40px;
+    height: 40px;
     position: absolute;
+    top: 17%;
+    right: 10.75%;
     cursor: pointer;
     display: block;
     opacity: 0;
@@ -113,11 +114,11 @@ header .right-side {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    padding: 5px;
 }
 
 header .bell-wrapper span{
-    color: #767676;
+    color: #cccaca;
     cursor: pointer;
 }
 
@@ -129,7 +130,7 @@ header .bell-wrapper span{
 }
 
  .profile-menu .mini-menu {
-    display: block;
+    display: none;
     position: absolute;
     top: 62px;
     right: 10.75%;
@@ -146,12 +147,17 @@ header .bell-wrapper span{
     list-style-type: none;
     padding: 0 10px 10px 10px;
     margin: 0;
+    color: #767676;
 }
 
+.mini-menu #menu a
+{
+    text-decoration: none;
+}
 
 .mini-menu #menu li
 {
-    padding: 0 0 5px 0;
+    padding: 5px;
     font-size: 14px;
     text-decoration: none;
     color: #232323;
@@ -175,6 +181,6 @@ header .bell-wrapper span{
     width: 80%;
 }
 
-.profile-menu .avatar input:checked ~ .mini-menu {
-    display: none;
+input:checked ~ .mini-menu {
+    display: block;
 }
