@@ -1,91 +1,202 @@
-* {
-    box-sizing: border-box;
-}
-
 .grid
 {
     display: grid;
+    position: relative;
     width: 100%;
     height: 40vw;
     grid-template-columns: 4fr 4fr 5fr 3fr;
-    grid-template-rows: repeat(auto-fill, 8);
-    margin-top: 95px;
+    grid-template-rows: repeat(8, 1fr);
+    top: 95px;
 }
 
 .card-bsa
 {
-    background-color: rosybrown;
     grid-column: 1;
     grid-row: 1 / 5;
+    perspective: 1000px;
 }
 
 .card-qa
 {
-    background-color: green;
     grid-column: 1;
     grid-row: 5 / 9;
+    perspective: 1000px;
 }
 
 .card-js
 {
-    background-color: orange;
     grid-column: 2;
     grid-row: 1 / 7;
+    perspective: 1000px;
 }
 
 .card-java
 {
-    background-color: red;
     grid-column: 2;
     grid-row: 7 / 9;
 }
 
 .card-php
 {
-    background-color: gray;
     grid-column: 3 / 5;
     grid-row: 1 / 4;
 }
 
 .card-dotnet
 {
-    background-color: purple;
     grid-column: 3;
     grid-row: 4 / 9;
 }
 
 .card-events
 {
-    background-color: aqua;
     grid-column: 4;
     grid-row: 4 / 6;
-    overflow-y: scroll;
 }
 
 .card-blog
 {
-    background-color: blue;
     grid-column: 4;
     grid-row: 6 / 8;
 }
 
 .card-contacts
 {
-    background-color: navy;
     grid-column: 4;
     grid-row: 8;
 }
 
-.grid p {
-    display: inline-block;
-    text-align: justify;
+.card 
+{
+    position: relative;
+}
+
+.grid .back-text {
+    position: absolute;
+    padding: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.card-events .back-text,
+.card-blog .back-text
+{
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.back-text, .card-bsa .btn-join, .card-contacts .navigation
+{
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.btn-join
+{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.card-bsa .btn-join a
+{
+    appearance: button;
+    text-decoration: none;
+    background-color: #2d99fe;
+    color: white;
+    padding: 10px 40px 10px 40px;
+    border: none;
+    border-radius: 3px;
+}
+
+.card-contacts a:hover path, .card-contacts a:hover circle
+{
+    fill:#2d99fe;
+}
+
+.card-bsa .btn-join a:hover
+{
+    background-color:#0443a3;
+}
+
+.front-card
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    font-size: 70px;
+    color: white;
+    position: absolute;
+    padding: 5px;
+}
+
+.card-js .front-card
+{
+    color: black;
+    font-weight: bold;
+    font-size: 80px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.card-java .front-card
+{
+    font-size: 40px;
+}
+
+.card-php .front-card
+{
+    color: black;
+    font-style: italic;
+}
+
+.card-events .front-card,
+.card-blog .front-card,
+.card-contacts .front-card
+{
+    font-size: 16px;
+}
+
+.card-contacts .navigation
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.navigation a
+{
     margin: 5px;
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 10px;
+  }
 
 @media (max-width: 960px){
     .grid{
         grid-template-columns: 8fr 1fr 5fr 4fr;
-        grid-template-rows: 3fr 3fr 2fr 4fr 4fr;
+        grid-template-rows: repeat(2, 3fr) 2fr repeat(2, 4fr);
         height: 71vw;
     }
 
@@ -103,50 +214,190 @@
 
     .card-js
     {
-        grid-column: 2 / 5;
+        grid-column: 2 / 4;
         grid-row: 1 / 4;
     }
 
     .card-java
     {
-        background-color: red;
         grid-column: 1 / 3;
         grid-row: 4;
     }
 
     .card-php
     {
-        background-color: gray;
         grid-column: 3 / 5;
         grid-row: 4;
     }
 
     .card-dotnet
     {
-        background-color: purple;
         grid-column: 3 / 5;
         grid-row: 5;
     }
 
     .card-events
     {
-        background-color: aqua;
         grid-column: 4;
         grid-row: 1;
-        overflow-y: scroll;
     }
 
     .card-blog
     {
-        background-color: blue;
         grid-column: 4;
         grid-row: 2;
     }
 
     .card-contacts
     {
-        background-color: navy;
         grid-column: 4;
         grid-row: 3;
-    }    
+    }  
+}
+
+@keyframes slideOutToRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+}
+
+.card-js .card-js-inner,
+.card-qa .card-qa-inner,
+.card-bsa .card-bsa-inner
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.card-bsa:hover .card-bsa-inner
+{
+    transform: rotateY(180deg);
+}
+
+.card-js:hover .card-js-inner
+{
+    transform: rotateY(180deg);
+}
+
+.card-qa:hover .card-qa-inner
+{
+    transform: rotateY(180deg);
+}
+
+.back-js, .btn-join, .back-qa
+{
+    background-color: white;
+    transform: rotateY(180deg);
+}
+
+
+@keyframes main {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+.card-dotnet .front-card,
+.card-php .front-card,
+.card-events .front-card,
+.card-blog .front-card,
+.card-contacts .front-card,
+.card-java .front-card
+{
+    transition: transform 0.3s
+}
+ 
+.card-dotnet .front-card:hover,
+.card-dotnet:hover .front-card
+{
+    transform: scale(0);
+    transform-origin: 100% 100%; 
+}
+
+.card-dotnet .front-card
+{
+    transform: scale(1);
+    transform-origin: 100% 100%; 
+}
+
+.card-php .front-card:hover,
+.card-php:hover .front-card
+{
+    transform: scale(0);
+    transform-origin: 100% 0%;
+}
+
+.card-php .front-card
+{
+    transform: scale(1);
+    transform-origin: 100% 0%;
+}
+
+.card-events .front-card:hover,
+.card-events:hover .front-card,
+.card-blog .front-card:hover,
+.card-blog:hover .front-card,
+.card-contacts .front-card:hover,
+.card-contacts:hover .front-card
+{
+    transform: scaleX(0);
+    transform-origin: 100% 0%;
+}
+
+.card-events .front-card,
+.card-blog .front-card,
+.card-contacts .front-card
+{
+    transform: scale(1);
+    transform-origin: 100% 0%; 
+}
+
+.card-java .front-card:hover,
+.card-java:hover .front-card
+{
+    transform: scaleY(0);
+    transform-origin: 0% 100%;
+}
+
+.card-java .front-card
+{
+    transform: scaleY(1);
+    transform-origin: 0% 100%;
+}
+
+.front-java 
+{
+    animation: fontSizeEnlarge40 .3s .2s
+}
+
+.front-dotnet, .front-php 
+{
+    animation: fontSizeEnlarge70 .3s .2s;
+}
+
+@keyframes fontSizeEnlarge70 {
+    0% {
+      font-size: 0px;
+    }
+    100% {
+      font-size: 70px;
+    }
+}
+
+@keyframes fontSizeEnlarge40 {
+    0% {
+      font-size: 0px;
+    }
+    100% {
+      font-size: 40px;
+    }
 }

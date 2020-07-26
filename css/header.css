@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
 }
 
 header {
@@ -10,12 +11,13 @@ header {
     justify-content: space-between;
     background: #fff;
     box-shadow: 0 6px 5px -5px rgba(0,0,0,.1);
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
     z-index: 50;
     top: 0;
     left: 0;
     display: flex;
     align-items: center;
-    animation: 1s ease-out 0s 1 slideInFromTop;
+    animation: .5s ease-out 0s 1 slideInFromTop;
     padding: 0 10% 0 10%;
 }
 
@@ -87,7 +89,6 @@ header {
     font-size: 1.25rem;
     align-items: center;
     flex-shrink: 0;
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
     line-height: 1;
     user-select: none;
     justify-content: center;
@@ -176,7 +177,7 @@ input:checked ~ .dropdown-menu {
     100% {
       transform: translateY(0);
     }
-  }
+}
 
 @media (max-width: 1024px) {
     header  {
