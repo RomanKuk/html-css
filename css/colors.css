@@ -1,0 +1,22 @@
+:root {
+    --color-bell:#cccaca;
+    --color-bell-hover:#adadad;
+
+    --color-avatar:#ff9a00;
+    --color-avatar-hover:#e78b01;
+
+    --color-menu-items-hover:#f7f7f7;
+    --color-dropdown-menu-name:#767676;
+
+    --color-body-background:#f8f9fc;
+
+    --color-front-bsa:#ffffff;
+    --color-front-js:#f7cf69;
+    --color-front-qa:#52bf77;
+    --color-front-java:#e12b4c;
+    --color-front-php:#8893c0;
+    --color-front-dotnet:#642077;
+    --color-front-events:#2d99fe;
+    --color-front-blog:#0443a3;
+    --color-front-contacts:#00255f;
+}
