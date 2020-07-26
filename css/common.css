@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+html {
+    height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 0 10% 0 10%;
+    background-color: var(--color-body-background);
+  }

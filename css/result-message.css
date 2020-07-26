@@ -1,0 +1,47 @@
+.result-message {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    margin: 10px;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+.message {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    width: 210px;
+    height: auto;
+    opacity: 0.75;
+}
+
+.message-info 
+{
+    padding: 10px;
+}
+
+.message-icon
+{
+    margin-left: 10px;
+}
+
+.message h3{
+    font-weight: bold;
+}
+
+
+.error{
+    background-color: red;
+}
+
+.success {
+    background-color: green;
+}
